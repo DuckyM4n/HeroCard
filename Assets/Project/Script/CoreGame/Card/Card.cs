@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Card
+namespace Game.Card
 {
     public class Card : MonoBehaviour
     {
@@ -26,20 +26,6 @@ namespace Card
         {
 
         }
-
-        public virtual void PlayCard()
-        {
-
-        }
-        public virtual void AttackCard(HeroCard target)
-        {
-
-        }
-        public virtual void AttackPlayer()
-        {
-
-        }    
-
         public virtual void DoEffect(Card target)
         {
 

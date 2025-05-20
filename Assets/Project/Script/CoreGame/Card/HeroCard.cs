@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Player;
+using UnityEngine.Events;
 
-namespace Card
+namespace Game.Card
 {
     public class HeroCard : Card
     {
@@ -26,17 +28,14 @@ namespace Card
 
         }
 
-        public override void AttackCard(HeroCard target)
+        public void AttackCard(HeroCard target)
         {
             int attackPoint = attackDamage;
             if (target.type == counterType)
                 attackPoint = attackPoint * 85 / 100;
             else if (type == target.counterType)
                 attackPoint = attackPoint * 115 / 100;
-            if (attackPoint >= target.defense)
-                target.DestroyCard();
-            else
-                target.TakeDamage(attackPoint);
+            target.TakeDamage(attackPoint);
         }
 
         public void TakeDamage(int damage)
@@ -88,10 +87,10 @@ namespace Card
     public enum HeroType
     {
         None = 0,
-        Knight = 1,
-        Berserker = 2,
+        Soldier = 1,
+        Calvary = 2,
         Archer = 3,
-        Assansin = 4,
-        Mage = 5
+        Knight = 4,
+        Scout = 5
     }
 }

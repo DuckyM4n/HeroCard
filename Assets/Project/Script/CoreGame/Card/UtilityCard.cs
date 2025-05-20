@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Card
+namespace Game.Card
 {
     public class UtilityCard : Card
     {
@@ -19,6 +19,10 @@ namespace Card
 
         }
 
+/*        public override void PlayCard(HeroCard target)
+        {
+            target.Equip(this);
+        }*/
         public EquipType GetEquip()
         {
             return equip;

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Card
+namespace Game.Card
 {
     [CreateAssetMenu(fileName = "Card", menuName = "Card")]
     public class CardInfo : ScriptableObject
     {
+        public string id;
         [SerializeField]
         private string cardName;
         [SerializeField]

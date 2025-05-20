@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Card
+namespace Game.Card
 {
     public class SkillCard : Card
     {
@@ -23,7 +23,6 @@ namespace Card
         None = 0,
         Attack = 1,
         Defense = 2,
-        Buff = 3,
-        Trap = 4
+        Buff = 3
     }
 }    
