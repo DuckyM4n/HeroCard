@@ -9,9 +9,9 @@ namespace Game.Card
     {
         public string id;
         [SerializeField]
-        private string cardName;
+        public string cardName;
         [SerializeField]
-        private Sprite image;
+        public Sprite image;
         public CardType type;
         public int damage;
         public int defense;

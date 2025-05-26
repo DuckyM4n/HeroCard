@@ -12,10 +12,10 @@ namespace Player
         [SerializeField]
         public string playerName;
         [SerializeField]
-        private List<Card> graveyard;
-        private List<Card> handcard;
-        private List<Card> disk;
-        private Dictionary<CardType, string> field;
+        public List<Card> graveyard;
+        public List<Card> handcard;
+        public List<Card> disk;
+        public List<Card> field;
         public int drawCardValue;
         public bool isTurn;
         // Start is called before the first frame update
@@ -29,15 +29,22 @@ namespace Player
         {
 
         }
-        
+        public bool PlayCard(Card card)
+        {
+            if(handcard.Contains(card))
+            {
+                handcard.Remove(card);
+                field.Add(card);
+                return true;
+            }
+            return false;
+        }    
         public void DiscardCard(Card card)
         {
             graveyard.Add(card);
-            var item = field.FirstOrDefault(pair => pair.Value == card.data.id);
-
-            if (!item.Equals(default(KeyValuePair<int, string>)))
+            if (field.Contains(card))
             {
-                field.Remove(item.Key);
+                field.Remove(card);
             }
             else
             {
